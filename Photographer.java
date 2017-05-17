@@ -3,9 +3,11 @@ import java.util.*;
 public class Photographer {
 
   private ArrayList<Camera> cameraList;
+  private HashMap <String, Integer> photos;
 
   public Photographer() {
     cameraList = new ArrayList<Camera>();
+    photos = new HashMap <> ();
   }
 
   public void addCamera(Camera camera){
@@ -26,6 +28,14 @@ public class Photographer {
       result += ((Printable)cameraList.get(i)).printDetails()+'\n';
     }
     return result;
+  }
+
+  public void addPhotos(String date, Integer numberOfPhotos){
+    photos.put(date, numberOfPhotos);
+  }
+
+  public Integer getPhotos(String date){
+    return photos.get(date);
   }
 
 

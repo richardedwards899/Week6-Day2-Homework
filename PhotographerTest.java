@@ -36,4 +36,10 @@ public class PhotographerTest{
     photographer.addCamera(analogCamera);
     assertEquals("I am digital deets\n"+"I am analog deets\n", photographer.printAllCameras());
   }
+
+  @Test
+  public void canAddPhotosOnDate(){
+    photographer.addPhotos("17/05/2017", 20);
+    assertEquals((Integer) 20, photographer.getPhotos("17/05/2017"));
+  }
 }
